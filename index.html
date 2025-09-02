@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicademia - Mobile Apps on Google Play</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        .apps-section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .app-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .puzzle-icon { background: linear-gradient(45deg, #ff9a9e, #fecfef); }
+        .airtime-icon { background: linear-gradient(45deg, #a8edea, #fed6e3); }
+        .recharge-icon { background: linear-gradient(45deg, #ffd89b, #19547b); }
+        .money-icon { background: linear-gradient(45deg, #ffecd2, #fcb69f); }
+        .rides-icon { background: linear-gradient(45deg, #667eea, #764ba2); }
+
+        .app-info h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .app-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffd700;
+        }
+
+        .app-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .features {
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">N</div>
+                    <h1>Nicademia</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Innovative Mobile Apps for Everyone</h2>
+                <p>Discover our collection of engaging puzzle games, utility apps, and services designed to make your mobile experience better</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Apps Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20K+</span>
+                        <span class="stat-label">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.2★</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="apps-section">
+            <div class="container">
+                <h2 class="section-title">Our Apps</h2>
+                
+                <div class="apps-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon puzzle-icon">🧩</div>
+                            <div class="app-info">
+                                <h3>Airtime Puzzle: Earn Airtime</h3>
+                                <div class="app-rating">
+                                    <span>⭐⭐⭐⭐</span>
+                                    <span>3.7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="app-description">
+                            Solve exciting puzzles and earn free airtime rewards! Challenge your mind with various puzzle types while getting rewarded for your skills.
+                        </p>
+                        <a href="https://play.google.com/store/search?q=airtime%20puzzle&c=apps" class="download-btn">
+                            📱 Download on Play Store
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon airtime-icon">🎯</div>
+                            <div class="app-info">
+                                <h3>PuzzlePrize: Win Free Airtime</h3>
+                                <div class="app-rating">
+                                    <span>⭐⭐⭐⭐</span>
+                                    <span>4.1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="app-description">
+                            Play and win free airtime with our engaging puzzle games. Multiple game modes and daily challenges to keep you entertained.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.valuba.freeairtime" class="download-btn">
+                            📱 Download on Play Store
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon recharge-icon">💳</div>
+                            <div class="app-info">
+                                <h3>VALURA: Global Recharge & eSim</h3>
+                                <div class="app-rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="app-description">
+                            Send instant top-ups worldwide and manage your eSim services. Connect with family and friends across the globe with ease.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.tech.valuba" class="download-btn">
+                            📱 Download on Play Store
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon money-icon">💰</div>
+                            <div class="app-info">
+                                <h3>Double Money Spin: Win Cash</h3>
+                                <div class="app-rating">
+                                    <span>⭐⭐⭐⭐</span>
+                                    <span>4.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="app-description">
+                            Predict 3 lucky numbers and double your money! An exciting spinning game with real rewards and thrilling gameplay.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.valuba.doublemoney" class="download-btn">
+                            📱 Download on Play Store
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon rides-icon">🚗</div>
+                            <div class="app-info">
+                                <h3>eRides: Compare Uber/Bolt Price</h3>
+                                <div class="app-rating">
+                                    <span>⭐⭐⭐⭐</span>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="app-description">
+                            You are the boss! Get the best deals by comparing ride prices across different platforms. Make smart transportation choices.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=com.valuba.usersapp" class="download-btn">
+                            📱 Download on Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Nicademia?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🎮</div>
+                        <h4>Engaging Gameplay</h4>
+                        <p>Our puzzle games offer hours of entertainment with progressively challenging levels and rewarding gameplay mechanics.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🏆</div>
+                        <h4>Real Rewards</h4>
+                        <p>Earn actual airtime, cash rewards, and prizes while playing our games. Entertainment that pays you back!</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🌍</div>
+                        <h4>Global Services</h4>
+                        <p>Send top-ups worldwide and access international services with our comprehensive utility applications.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Fast & Reliable</h4>
+                        <p>Lightning-fast performance and reliable service delivery across all our applications and platforms.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h4>Secure & Safe</h4>
+                        <p>Your data and transactions are protected with industry-standard security measures and encryption.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">💡</div>
+                        <h4>Smart Solutions</h4>
+                        <p>Innovative features like price comparison tools help you make informed decisions and save money.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link">📧</a>
+                <a href="#" class="social-link">🐦</a>
+                <a href="#" class="social-link">📘</a>
+                <a href="#" class="social-link">📷</a>
+            </div>
+            <p>&copy; 2025 Nicademia. All rights reserved.</p>
+            <p>Available on Google Play Store</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats on scroll
+            const stats = document.querySelectorAll('.stat-number');
+            
+            const animateStats = () => {
+                stats.forEach(stat => {
+                    const rect = stat.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const finalValue = stat.textContent;
+                        let currentValue = 0;
+                        const increment = parseInt(finalValue) / 50;
+                        
+                        const counter = setInterval(() => {
+                            if (currentValue < parseInt(finalValue)) {
+                                currentValue += increment;
+                                stat.textContent = Math.floor(currentValue) + finalValue.replace(/[0-9]/g, '');
+                            } else {
+                                stat.textContent = finalValue;
+                                clearInterval(counter);
+                            }
+                        }, 30);
+                    }
+                });
+            };
+
+            // Parallax effect for floating shapes
+            const shapes = document.querySelectorAll('.shape');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.5;
+                    shape.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+
+            // Add click animations to download buttons
+            const downloadBtns = document.querySelectorAll('.download-btn');
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+                    ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.pointerEvents = 'none';
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe app cards and features
+            document.querySelectorAll('.app-card, .feature').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
