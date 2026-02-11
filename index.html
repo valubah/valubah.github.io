@@ -264,7 +264,8 @@
         .app-card:nth-child(4) { animation-delay: 0.2s; }
         .app-card:nth-child(5) { animation-delay: 0.25s; }
         .app-card:nth-child(6) { animation-delay: 0.3s; }
-        .app-card:nth-child(n+7) { animation-delay: 0.35s; }
+        .app-card:nth-child(7) { animation-delay: 0.35s; }
+        .app-card:nth-child(8) { animation-delay: 0.4s; }
 
         .app-card::before {
             content: '';
@@ -651,25 +652,6 @@
             font-weight: 600;
         }
 
-        .loading {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            padding: 4rem 2rem;
-            font-weight: 500;
-        }
-
-        .loading::after {
-            content: '...';
-            animation: dots 1.5s steps(4, end) infinite;
-        }
-
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -779,7 +761,7 @@
 
                     <div class="stats">
                         <div class="stat">
-                            <span class="stat-number" id="app-count">7+</span>
+                            <span class="stat-number">8+</span>
                             <span class="stat-label">Apps Available</span>
                         </div>
                         <div class="stat">
@@ -787,7 +769,7 @@
                             <span class="stat-label">Happy Downloads</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" id="avg-rating">4.0★</span>
+                            <span class="stat-number">4.0★</span>
                             <span class="stat-label">Average Rating</span>
                         </div>
                     </div>
@@ -800,11 +782,332 @@
                 <div class="section-header">
                     <span class="section-label">Featured Apps</span>
                     <h2 class="section-title">Our Collection</h2>
-                    <p class="section-description">Premium mobile applications available on the Google Play Store</p>
+                    <p class="section-description">Premium mobile applications and web games</p>
                 </div>
 
                 <div id="apps-container">
-                    <div class="loading">Loading apps from Play Store</div>
+                    <div class="apps-grid">
+                        <!-- App 1: Airtime Puzzle -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/xJ8oTYk-G67xawOP7Joo6f2quMGrvXVo_V7ta6ScGYDll6K5s6ZM21dAVOkgcC11i11t=w2560-h1440-rw" alt="Airtime Puzzle screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/uJtzqDEbbJyT_sfXRd4sNPMbGGjmFvrvF155P4Eb5CupRO3HdifkfGqeh9-0azi41cU=w2560-h1440-rw" alt="Airtime Puzzle screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/S5Y0bvMGN8bQCH5H5qXQZq5-5D7y7Zy8fZ5Y7Y7Z5Y7Z5Y7Z5Y7Z5Y7Z5Y7Z5Y7Z5Y7=w2560-h1440-rw" alt="Airtime Puzzle screenshot 3" loading="lazy" onerror="this.parentElement.style.display='none'">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/uJtzqDEbbJyT_sfXRd4sNPMbGGjmFvrvF155P4Eb5CupRO3HdifkfGqeh9-0azi41cU=s64" alt="Airtime Puzzle" onerror="this.parentElement.innerHTML='🧩'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">Airtime Puzzle: Earn Airtime</h3>
+                                        <div class="app-rating">
+                                            <span>⭐⭐⭐</span><span style="margin-left: 0.5rem;">3.6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Solve exciting puzzles and earn free airtime rewards. Challenge your mind with engaging puzzle types while getting rewarded for your skills.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.winairtime" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 2: PuzzlePrize -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/9Yrs8DcuqOZEr5VCCjDR-ovEfF4yP-S7SAANqhQzX7VtWMSOJLbXiZQK0K8zUmAuDIY=w2560-h1440-rw" alt="PuzzlePrize screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/i-su6pbZIDrmnCBvmuQJqCrKVJcgttHR7rJxUt-sv1-17LpkwiKIGmR3-wMGQjOLhg=w2560-h1440-rw" alt="PuzzlePrize screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/i-su6pbZIDrmnCBvmuQJqCrKVJcgttHR7rJxUt-sv1-17LpkwiKIGmR3-wMGQjOLhg=s64" alt="PuzzlePrize" onerror="this.parentElement.innerHTML='🎮'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">PuzzlePrize: Win Free Airtime</h3>
+                                        <div class="app-rating">
+                                            <span>⭐⭐⭐</span><span style="margin-left: 0.5rem;">3.6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Play and win free airtime with engaging puzzle games. Multiple game modes and daily challenges to keep you entertained.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.freeairtime" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 3: RATEL -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/vhsJdubM5ZV4WwiK0N22POn1bfsLdgOKV3JTRjkLuH2hwqbOAE_bDcKAKrtvZ3ALMPU=w2560-h1440-rw" alt="RATEL screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/r2x0r9tklRO8uQBBXyTUZtWKCsy0Ls4hCJabrSJVH4vCvOTS9gMOfg5oe3z4ZTdaSyg=w2560-h1440-rw" alt="RATEL screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/r2x0r9tklRO8uQBBXyTUZtWKCsy0Ls4hCJabrSJVH4vCvOTS9gMOfg5oe3z4ZTdaSyg=s64" alt="RATEL" onerror="this.parentElement.innerHTML='💳'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">RATEL: Global Recharge & eSim</h3>
+                                        <div class="app-rating">
+                                            <span>⭐⭐⭐⭐</span><span style="margin-left: 0.5rem;">4.6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Send instant top-ups worldwide and manage your eSim services. Connect with family and friends globally with ease.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.tech.valuba" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 4: Airtime Spin -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/os-OYQEFWZs1AqUdqjkq-jIAKQ5i24JNN48erLMwcujFLwyYlaH5DMwVM_C86qnFZ6o-LJb6fs8hDeUs8AIlag=w2560-h1440-rw" alt="Airtime Spin screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/dMdpgVVQeNiD8A-BNc0p2SRsN06H327TMenU9ZaCsxrS4rDqdE4mclj9bwb4TmhiaGodl75a6okn5HSBeQfQaQ=w2560-h1440-rw" alt="Airtime Spin screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/dMdpgVVQeNiD8A-BNc0p2SRsN06H327TMenU9ZaCsxrS4rDqdE4mclj9bwb4TmhiaGodl75a6okn5HSBeQfQaQ=s64" alt="Airtime Spin" onerror="this.parentElement.innerHTML='🎡'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">Airtime Spin: Win Airtime</h3>
+                                        <div class="app-rating">
+                                            <span style="color: var(--text-tertiary);">New App</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Spin the wheel and win free airtime! An exciting spinning game with real rewards and thrilling gameplay.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.airtimespin.airtime_spin" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 5: Safeguard -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/C8nNevbvTp3yoLaL7M_mq9F07DHWGQmDOMRykRpXK3rLqxnw-qbdBQU12rb49Q2FXdt6DbY4wZ4jkP6WFD2Q=w2560-h1440-rw" alt="Safeguard screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/TTcrufvEzMzw91fW7W84jXdKBBvrzqrZCOBQFzigVDGbh6zMBufiSIMGbcigZVn-bpm87UX7a-25bj-vC-fJ=w2560-h1440-rw" alt="Safeguard screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/TTcrufvEzMzw91fW7W84jXdKBBvrzqrZCOBQFzigVDGbh6zMBufiSIMGbcigZVn-bpm87UX7a-25bj-vC-fJ=s64" alt="Safeguard" onerror="this.parentElement.innerHTML='🛡️'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">Safeguard Personal Safety App</h3>
+                                        <div class="app-rating">
+                                            <span style="color: var(--text-tertiary);">New App</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Stay safe with our personal safety app. Alert trusted contacts instantly with location tracking in emergencies.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.safeguard" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 6: Double Money -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/hQsX5Mhutfax5wdiynTlJj-d91bEuqS5CWc145riQ3zTOtfmvGvjI_keQbfxxCPpqEbqIZyP0dV0lcBZ1zqbVg=w526-h296" alt="Double Money screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/xTl_dQx2VBVccRGuvV-PMNsYWbIaL_sTmUK2odLyuIEBrc7wdFzFcEfmvY0mqGWnlgC7OmMTLNj9vwFg7R29Rg=w526-h296" alt="Double Money screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/S1zj__ukrr9XYW_hztTx74xW90ZrLJLnIC2tMndu8cVfPDjgloeVwLltyPfoHijou_B0XzdK3ATjMsPdyT8g3Q=w526-h296" alt="Double Money screenshot 3" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/v5YSrYeowXq2KLrt4n8Gd9SRVeKKDGLVm421Nsoqa59SykMtt6-mr2HA_D9lTlAg19wBMsNp8ximVwKZnrYzf4I=w526-h296" alt="Double Money screenshot 4" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                        <div class="screenshot-dot"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/n43ujmpbQTg80HIEEoYO17iCuCIvroP1EjUUvQ5qC-_8vyLWelf9Gjo8yJeGTnRctkRGhKL05C52gJZW4Ge-EA=s64" alt="Double Money" onerror="this.parentElement.innerHTML='💰'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">Double Money Spin: Win Cash</h3>
+                                        <div class="app-rating">
+                                            <span>⭐⭐⭐⭐</span><span style="margin-left: 0.5rem;">4.3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Predict lucky numbers and double your money! Test your prediction skills in this exciting spinning game with real cash rewards.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.doublemoney" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 7: eRides -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://play-lh.googleusercontent.com/AyoLfmvApqnhFkyGl3wPIFguyY4orqQHK6t-0m86vFm9GP--ceU1TlfC_514xuQn5LU=w526-h296" alt="eRides screenshot 1" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/T7AALSHtSAkKfoI_y4tqMJflzwvdjM_TYgQAANIiXULO4QV5O2XDcVqThTejbpeJ26E=w526-h296" alt="eRides screenshot 2" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/Pfym5FwlAknkkt1LWnqabOqowRWA-inRU-wZQSU2hubEirLldpjCRNtLM2MiJRmpNbDs=w526-h296" alt="eRides screenshot 3" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-slide">
+                                        <img src="https://play-lh.googleusercontent.com/7P2RMQoFjqLQroHQ234K3LTSSwiTji1a9nfcf2ozyv-aH-z9LXX_RWuwDocTcLbOM6U=w526-h296" alt="eRides screenshot 4" loading="lazy">
+                                    </div>
+                                    <div class="screenshot-arrow prev">‹</div>
+                                    <div class="screenshot-arrow next">›</div>
+                                    <div class="screenshot-nav">
+                                        <div class="screenshot-dot active"></div>
+                                        <div class="screenshot-dot"></div>
+                                        <div class="screenshot-dot"></div>
+                                        <div class="screenshot-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">
+                                        <img src="https://play-lh.googleusercontent.com/KmtdvruIeoHOzR1S3Zu4EMadjqBhPP7RNFnRWkvQuuctUiO4WdNpZAnSdN6uIQzHdlJo=s64" alt="eRides" onerror="this.parentElement.innerHTML='🚗'">
+                                    </div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">eRides: Compare Uber/Bolt Price</h3>
+                                        <div class="app-rating">
+                                            <span style="color: var(--text-tertiary);">New App</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Compare estimated prices for Uber, Bolt, Indrive, Rida, Lagride and more across Nigeria. Get the best deals and make smart transportation choices.
+                                </p>
+                                <a href="https://play.google.com/store/apps/details?id=com.valuba.usersapp" class="download-btn" target="_blank">
+                                    📱 Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App 8: Mario Web Game -->
+                        <div class="app-card">
+                            <div class="app-screenshots">
+                                <div class="screenshot-container">
+                                    <div class="screenshot-slide active">
+                                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop" alt="Mario Game screenshot" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="app-header">
+                                    <div class="app-icon">🎮</div>
+                                    <div class="app-meta">
+                                        <h3 class="app-name">Android Mario Game</h3>
+                                        <div class="app-rating">
+                                            <span>⭐⭐⭐⭐⭐</span><span style="margin-left: 0.5rem;">5.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="app-description">
+                                    Experience classic Mario gameplay in your browser! Jump, collect coins, and defeat enemies in this exciting web-based adventure game.
+                                </p>
+                                <a href="https://v0-android-mario-game.vercel.app/" class="download-btn" target="_blank">
+                                    🎮 Play Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -870,51 +1173,13 @@
                 <p class="footer-text">
                     <strong>Nicademia</strong> — Innovative mobile solutions<br>
                     <span id="current-year">2025</span> © All rights reserved<br>
-                    <span style="color: var(--accent);">Available on Google Play Store</span>
+                    <span style="color: var(--accent);">Available on Google Play Store & Web</span>
                 </p>
             </div>
         </div>
     </footer>
 
     <script>
-        const appIconMap = {
-            'puzzle': '🧩',
-            'airtime': '📱',
-            'recharge': '💳',
-            'esim': '🌐',
-            'ratel': '💳',
-            'spin': '🎡',
-            'money': '💰',
-            'double': '💰',
-            'safety': '🛡️',
-            'safeguard': '🛡️',
-            'ride': '🚗',
-            'erides': '🚗',
-            'uber': '🚗',
-            'bolt': '🚗',
-            'game': '🎮',
-            'default': '📱'
-        };
-
-        function getAppIcon(appName) {
-            const nameLower = appName.toLowerCase();
-            for (const [key, emoji] of Object.entries(appIconMap)) {
-                if (nameLower.includes(key)) {
-                    return emoji;
-                }
-            }
-            return appIconMap.default;
-        }
-
-        function getStarRating(rating) {
-            if (!rating || rating === 0) {
-                return '<span style="color: var(--text-tertiary);">New App</span>';
-            }
-            const fullStars = Math.floor(rating);
-            const stars = '⭐'.repeat(fullStars);
-            return `<span>${stars}</span><span style="margin-left: 0.5rem;">${rating.toFixed(1)}</span>`;
-        }
-
         function initializeSlideshow(appCard) {
             const slides = appCard.querySelectorAll('.screenshot-slide');
             const dots = appCard.querySelectorAll('.screenshot-dot');
@@ -988,317 +1253,19 @@
             startAutoPlay();
         }
 
-        async function fetchNicademiaApps() {
-            const container = document.getElementById('apps-container');
-
-            try {
-                const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                const playStoreUrl = encodeURIComponent('https://play.google.com/store/apps/developer?id=Nicademia');
-
-                const response = await fetch(proxyUrl + playStoreUrl);
-                const html = await response.text();
-
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-
-                const apps = [];
-                const appLinks = doc.querySelectorAll('a[href*="/store/apps/details?id="]');
-
-                for (const link of appLinks) {
-                    const href = link.getAttribute('href');
-                    if (href && href.includes('id=')) {
-                        const appId = href.split('id=')[1].split('&')[0];
-                        const appName = link.querySelector('img')?.getAttribute('alt') ||
-                                       link.textContent.trim() ||
-                                       'Nicademia App';
-
-                        let rating = 0;
-                        const ratingElement = link.querySelector('[aria-label*="star"]') ||
-                                            link.parentElement?.querySelector('[aria-label*="star"]');
-                        if (ratingElement) {
-                            const ratingText = ratingElement.getAttribute('aria-label');
-                            const ratingMatch = ratingText?.match(/(\d+\.?\d*)\s*star/);
-                            if (ratingMatch) {
-                                rating = parseFloat(ratingMatch[1]);
-                            }
-                        }
-
-                        const iconImg = link.querySelector('img');
-                        const iconUrl = iconImg ? iconImg.getAttribute('src') : null;
-
-                        const screenshots = [];
-                        const screenshotImg = link.previousElementSibling?.querySelector('img');
-                        if (screenshotImg) {
-                            const screenshotUrl = screenshotImg.getAttribute('src');
-                            if (screenshotUrl && screenshotUrl.includes('play-lh.googleusercontent.com')) {
-                                screenshots.push(screenshotUrl);
-                            }
-                        }
-
-                        if (!apps.some(app => app.id === appId)) {
-                            apps.push({
-                                id: appId,
-                                name: appName,
-                                rating: rating,
-                                iconUrl: iconUrl,
-                                screenshots: screenshots,
-                                url: `https://play.google.com/store/apps/details?id=${appId}`
-                            });
-                        }
-                    }
-                }
-
-                if (apps.length === 0) {
-                    throw new Error('No apps found');
-                }
-
-                await fetchDetailedScreenshots(apps);
-
-                displayApps(apps);
-                updateStats(apps);
-
-            } catch (error) {
-                console.error('Error fetching apps:', error);
-                displayFallbackApps();
-            }
-        }
-
-        async function fetchDetailedScreenshots(apps) {
-            const proxyUrl = 'https://api.allorigins.win/raw?url=';
-
-            const fetchPromises = apps.map(async (app, index) => {
-                await new Promise(resolve => setTimeout(resolve, index * 500));
-
-                try {
-                    const appPageUrl = encodeURIComponent(app.url);
-                    const response = await fetch(proxyUrl + appPageUrl);
-                    const html = await response.text();
-
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-
-                    const screenshotImages = doc.querySelectorAll('img[src*="play-lh.googleusercontent.com"]');
-                    const screenshots = [];
-
-                    screenshotImages.forEach(img => {
-                        const src = img.getAttribute('src');
-                        if (src && src.includes('play-lh.googleusercontent.com') && !screenshots.includes(src)) {
-                            if (src.includes('=w') && !src.includes('=s64')) {
-                                screenshots.push(src);
-                            }
-                        }
-                    });
-
-                    app.screenshots = screenshots.slice(0, 5);
-
-                } catch (error) {
-                    console.error(`Error fetching screenshots for ${app.name}:`, error);
-                }
-            });
-
-            await Promise.all(fetchPromises);
-        }
-
-        function displayApps(apps) {
-            const container = document.getElementById('apps-container');
-
-            const appsGrid = document.createElement('div');
-            appsGrid.className = 'apps-grid';
-
-            apps.forEach((app, index) => {
-                const appCard = document.createElement('div');
-                appCard.className = 'app-card';
-                appCard.style.animationDelay = `${index * 0.05}s`;
-
-                const iconEmoji = getAppIcon(app.name);
-                const iconHtml = app.iconUrl
-                    ? `<img src="${app.iconUrl}" alt="${app.name}" onerror="this.parentElement.innerHTML='${iconEmoji}'">`
-                    : iconEmoji;
-
-                let screenshotsHtml = '';
-                if (app.screenshots && app.screenshots.length > 0) {
-                    const slidesHtml = app.screenshots.map((screenshot, idx) =>
-                        `<div class="screenshot-slide ${idx === 0 ? 'active' : ''}">
-                            <img src="${screenshot}" alt="${app.name} screenshot ${idx + 1}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'no-screenshots\\'>${iconEmoji}</div>'">
-                        </div>`
-                    ).join('');
-
-                    const dotsHtml = app.screenshots.map((_, idx) =>
-                        `<div class="screenshot-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}"></div>`
-                    ).join('');
-
-                    screenshotsHtml = `
-                        <div class="app-screenshots">
-                            <div class="screenshot-container">
-                                ${slidesHtml}
-                                ${app.screenshots.length > 1 ? `
-                                    <div class="screenshot-arrow prev">‹</div>
-                                    <div class="screenshot-arrow next">›</div>
-                                    <div class="screenshot-nav">
-                                        ${dotsHtml}
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    screenshotsHtml = `
-                        <div class="app-screenshots">
-                            <div class="no-screenshots">${iconEmoji}</div>
-                        </div>
-                    `;
-                }
-
-                appCard.innerHTML = `
-                    ${screenshotsHtml}
-                    <div class="app-content">
-                        <div class="app-header">
-                            <div class="app-icon">${iconHtml}</div>
-                            <div class="app-meta">
-                                <h3 class="app-name">${app.name}</h3>
-                                <div class="app-rating">
-                                    ${getStarRating(app.rating)}
-                                </div>
-                            </div>
-                        </div>
-                        <p class="app-description">
-                            ${getAppDescription(app.name)}
-                        </p>
-                        <a href="${app.url}" class="download-btn" target="_blank">
-                            📱 Download
-                        </a>
-                    </div>
-                `;
-
-                appsGrid.appendChild(appCard);
-
-                if (app.screenshots && app.screenshots.length > 1) {
-                    setTimeout(() => initializeSlideshow(appCard), 100);
-                }
-            });
-
-            container.innerHTML = '';
-            container.appendChild(appsGrid);
-        }
-
-        function getAppDescription(name) {
-            const nameLower = name.toLowerCase();
-
-            if (nameLower.includes('puzzle') && nameLower.includes('airtime')) {
-                return 'Solve exciting puzzles and earn free airtime rewards. Challenge your mind with engaging puzzle types while getting rewarded for your skills.';
-            } else if (nameLower.includes('puzzleprize')) {
-                return 'Play and win free airtime with engaging puzzle games. Multiple game modes and daily challenges to keep you entertained.';
-            } else if (nameLower.includes('ratel') || (nameLower.includes('recharge') && nameLower.includes('esim'))) {
-                return 'Send instant top-ups worldwide and manage your eSim services. Connect with family and friends globally with ease.';
-            } else if (nameLower.includes('spin') && nameLower.includes('airtime')) {
-                return 'Spin the wheel and win free airtime! An exciting spinning game with real rewards and thrilling gameplay.';
-            } else if (nameLower.includes('safeguard') || nameLower.includes('safety')) {
-                return 'Stay safe with our personal safety app. Alert trusted contacts instantly with location tracking in emergencies.';
-            } else if (nameLower.includes('erides') || (nameLower.includes('ride') && (nameLower.includes('uber') || nameLower.includes('bolt')))) {
-                return 'Compare ride prices across Uber, Bolt, and more. Get the best deals and make smart transportation choices.';
-            } else if (nameLower.includes('double') && nameLower.includes('money')) {
-                return 'Predict lucky numbers and double your money! An exciting game with real cash rewards.';
-            } else if (nameLower.includes('money') || nameLower.includes('cash')) {
-                return 'Win real money with our exciting games. Play, compete, and earn cash rewards while having fun.';
-            } else {
-                return 'Experience innovative mobile solutions from Nicademia. Download now and discover amazing features.';
-            }
-        }
-
-        function updateStats(apps) {
-            document.getElementById('app-count').textContent = apps.length + '+';
-
-            const ratings = apps.filter(app => app.rating > 0).map(app => app.rating);
-            if (ratings.length > 0) {
-                const avgRating = ratings.reduce((a, b) => a + b, 0) / ratings.length;
-                document.getElementById('avg-rating').textContent = avgRating.toFixed(1) + '★';
-            } else {
-                document.getElementById('avg-rating').textContent = 'New';
-            }
-        }
-
-        function displayFallbackApps() {
-            const fallbackApps = [
-                {
-                    id: 'com.valuba.winairtime',
-                    name: 'Airtime Puzzle: Earn Airtime',
-                    rating: 3.6,
-                    screenshots: [
-                        'https://play-lh.googleusercontent.com/xJ8oTYk-G67xawOP7Joo6f2quMGrvXVo_V7ta6ScGYDll6K5s6ZM21dAVOkgcC11i11t=w2560-h1440-rw',
-                        'https://play-lh.googleusercontent.com/uJtzqDEbbJyT_sfXRd4sNPMbGGjmFvrvF155P4Eb5CupRO3HdifkfGqeh9-0azi41cU=w2560-h1440-rw'
-                    ],
-                    iconUrl: 'https://play-lh.googleusercontent.com/uJtzqDEbbJyT_sfXRd4sNPMbGGjmFvrvF155P4Eb5CupRO3HdifkfGqeh9-0azi41cU=s64',
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.winairtime'
-                },
-                {
-                    id: 'com.valuba.freeairtime',
-                    name: 'PuzzlePrize: Win Free Airtime',
-                    rating: 3.6,
-                    screenshots: [
-                        'https://play-lh.googleusercontent.com/9Yrs8DcuqOZEr5VCCjDR-ovEfF4yP-S7SAANqhQzX7VtWMSOJLbXiZQK0K8zUmAuDIY=w2560-h1440-rw',
-                        'https://play-lh.googleusercontent.com/i-su6pbZIDrmnCBvmuQJqCrKVJcgttHR7rJxUt-sv1-17LpkwiKIGmR3-wMGQjOLhg=w2560-h1440-rw'
-                    ],
-                    iconUrl: 'https://play-lh.googleusercontent.com/i-su6pbZIDrmnCBvmuQJqCrKVJcgttHR7rJxUt-sv1-17LpkwiKIGmR3-wMGQjOLhg=s64',
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.freeairtime'
-                },
-                {
-                    id: 'com.tech.valuba',
-                    name: 'RATEL: Global Recharge & eSim',
-                    rating: 4.6,
-                    screenshots: [
-                        'https://play-lh.googleusercontent.com/vhsJdubM5ZV4WwiK0N22POn1bfsLdgOKV3JTRjkLuH2hwqbOAE_bDcKAKrtvZ3ALMPU=w2560-h1440-rw',
-                        'https://play-lh.googleusercontent.com/r2x0r9tklRO8uQBBXyTUZtWKCsy0Ls4hCJabrSJVH4vCvOTS9gMOfg5oe3z4ZTdaSyg=w2560-h1440-rw'
-                    ],
-                    iconUrl: 'https://play-lh.googleusercontent.com/r2x0r9tklRO8uQBBXyTUZtWKCsy0Ls4hCJabrSJVH4vCvOTS9gMOfg5oe3z4ZTdaSyg=s64',
-                    url: 'https://play.google.com/store/apps/details?id=com.tech.valuba'
-                },
-                {
-                    id: 'com.valuba.airtimespin.airtime_spin',
-                    name: 'Airtime Spin: Win Airtime',
-                    rating: 0,
-                    screenshots: [
-                        'https://play-lh.googleusercontent.com/os-OYQEFWZs1AqUdqjkq-jIAKQ5i24JNN48erLMwcujFLwyYlaH5DMwVM_C86qnFZ6o-LJb6fs8hDeUs8AIlag=w2560-h1440-rw',
-                        'https://play-lh.googleusercontent.com/dMdpgVVQeNiD8A-BNc0p2SRsN06H327TMenU9ZaCsxrS4rDqdE4mclj9bwb4TmhiaGodl75a6okn5HSBeQfQaQ=w2560-h1440-rw'
-                    ],
-                    iconUrl: 'https://play-lh.googleusercontent.com/dMdpgVVQeNiD8A-BNc0p2SRsN06H327TMenU9ZaCsxrS4rDqdE4mclj9bwb4TmhiaGodl75a6okn5HSBeQfQaQ=s64',
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.airtimespin.airtime_spin'
-                },
-                {
-                    id: 'com.valuba.safeguard',
-                    name: 'Safeguard Personal Safety App',
-                    rating: 0,
-                    screenshots: [
-                        'https://play-lh.googleusercontent.com/C8nNevbvTp3yoLaL7M_mq9F07DHWGQmDOMRykRpXK3rLqxnw-qbdBQU12rb49Q2FXdt6DbY4wZ4jkP6WFD2Q=w2560-h1440-rw',
-                        'https://play-lh.googleusercontent.com/TTcrufvEzMzw91fW7W84jXdKBBvrzqrZCOBQFzigVDGbh6zMBufiSIMGbcigZVn-bpm87UX7a-25bj-vC-fJ=w2560-h1440-rw'
-                    ],
-                    iconUrl: 'https://play-lh.googleusercontent.com/TTcrufvEzMzw91fW7W84jXdKBBvrzqrZCOBQFzigVDGbh6zMBufiSIMGbcigZVn-bpm87UX7a-25bj-vC-fJ=s64',
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.safeguard'
-                },
-                {
-                    id: 'com.valuba.doublemoney',
-                    name: 'Double Money Spin: Win Cash',
-                    rating: 0,
-                    screenshots: [],
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.doublemoney'
-                },
-                {
-                    id: 'com.valuba.usersapp',
-                    name: 'eRides: Compare Uber/Bolt Price',
-                    rating: 0,
-                    screenshots: [],
-                    url: 'https://play.google.com/store/apps/details?id=com.valuba.usersapp'
-                }
-            ];
-
-            displayApps(fallbackApps);
-            updateStats(fallbackApps);
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            fetchNicademiaApps();
+            // Initialize slideshows for all app cards
+            const appCards = document.querySelectorAll('.app-card');
+            appCards.forEach(card => {
+                const screenshotSlides = card.querySelectorAll('.screenshot-slide');
+                if (screenshotSlides.length > 1) {
+                    initializeSlideshow(card);
+                }
+            });
 
+            // Header scroll effect
             const header = document.querySelector('header');
             let lastScroll = 0;
 
