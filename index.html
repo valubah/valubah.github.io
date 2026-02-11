@@ -444,7 +444,7 @@
                 
                 <div class="stats">
                     <div class="stat">
-                        <span class="stat-number" id="app-count">-</span>
+                        <span class="stat-number" id="app-count">7+</span>
                         <span class="stat-label">Apps Available</span>
                     </div>
                     <div class="stat">
@@ -452,7 +452,7 @@
                         <span class="stat-label">Downloads</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" id="avg-rating">-</span>
+                        <span class="stat-number" id="avg-rating">4.0★</span>
                         <span class="stat-label">Average Rating</span>
                     </div>
                 </div>
@@ -534,11 +534,16 @@
             'airtime': '📱',
             'recharge': '💳',
             'esim': '🌐',
+            'ratel': '💳',
             'spin': '🎡',
             'money': '💰',
+            'double': '💰',
             'safety': '🛡️',
             'safeguard': '🛡️',
             'ride': '🚗',
+            'erides': '🚗',
+            'uber': '🚗',
+            'bolt': '🚗',
             'game': '🎮',
             'default': '📱'
         };
@@ -683,16 +688,18 @@
                 return 'Solve exciting puzzles and earn free airtime rewards! Challenge your mind with various puzzle types while getting rewarded for your skills.';
             } else if (nameLower.includes('puzzleprize')) {
                 return 'Play and win free airtime with our engaging puzzle games. Multiple game modes and daily challenges to keep you entertained.';
-            } else if (nameLower.includes('ratel') || nameLower.includes('recharge')) {
+            } else if (nameLower.includes('ratel') || (nameLower.includes('recharge') && nameLower.includes('esim'))) {
                 return 'Send instant top-ups worldwide and manage your eSim services. Connect with family and friends across the globe with ease.';
-            } else if (nameLower.includes('spin')) {
+            } else if (nameLower.includes('spin') && nameLower.includes('airtime')) {
                 return 'Spin the wheel and win free airtime! An exciting spinning game with real rewards and thrilling gameplay mechanics.';
             } else if (nameLower.includes('safeguard') || nameLower.includes('safety')) {
                 return 'Stay safe with our personal safety app. Alert your trusted contacts instantly in emergency situations with location tracking.';
-            } else if (nameLower.includes('ride')) {
-                return 'Compare ride prices across different platforms and get the best deals. Make smart transportation choices and save money.';
-            } else if (nameLower.includes('money')) {
-                return 'Predict lucky numbers and win cash rewards! An exciting game with real prizes and thrilling gameplay.';
+            } else if (nameLower.includes('erides') || (nameLower.includes('ride') && (nameLower.includes('uber') || nameLower.includes('bolt')))) {
+                return 'You are the boss! Compare ride prices across different platforms like Uber, Bolt, and more. Get the best deals and make smart transportation choices.';
+            } else if (nameLower.includes('double') && nameLower.includes('money')) {
+                return 'Predict 3 lucky numbers and double your money! An exciting spinning game with real cash rewards and thrilling gameplay.';
+            } else if (nameLower.includes('money') || nameLower.includes('cash')) {
+                return 'Win real money with our exciting games! Play, compete, and earn cash rewards while having fun.';
             } else {
                 return 'Experience innovative mobile solutions from Nicademia. Download now and discover amazing features!';
             }
@@ -743,6 +750,18 @@
                     name: 'Safeguard Personal Safety App',
                     rating: 0,
                     url: 'https://play.google.com/store/apps/details?id=com.valuba.safeguard'
+                },
+                {
+                    id: 'com.valuba.doublemoney',
+                    name: 'Double Money Spin: Win Cash',
+                    rating: 0,
+                    url: 'https://play.google.com/store/apps/details?id=com.valuba.doublemoney'
+                },
+                {
+                    id: 'com.valuba.usersapp',
+                    name: 'eRides: Compare Uber/Bolt Price',
+                    rating: 0,
+                    url: 'https://play.google.com/store/apps/details?id=com.valuba.usersapp'
                 }
             ];
             
